@@ -116,7 +116,7 @@ body{
  .container img{
     border-radius: 50%;
     width:35%;
-
+    border-style: solid;
     display: block;
     margin-left: auto;
     margin-right: auto;

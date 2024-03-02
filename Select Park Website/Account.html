@@ -4,6 +4,8 @@
 <title>Account</title>
 <link rel="stylesheet" href="styles/Account.css">
 <link rel="icon" type="image/x-icon" href="Images/favicon.ico.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
@@ -30,9 +32,10 @@
 <section class="container">
 
     <h4>Account</h4>
-    <div>
-        <img src="Images/avatar.jpg" alt="Avatar">
-        
+    <div class="user-img">
+        <img src="Images/avatar.jpg" id="photo" alt="Avatar"/>
+        <input type="file" id="file">
+        <label for="file" id="buttonupload"><i class="fa fa-camera"></i></label>
     </div>
 
 <div class="input">

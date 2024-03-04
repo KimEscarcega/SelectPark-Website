@@ -139,29 +139,32 @@ body{
   display: none;
  }
 
- #saveprofilepic{
+
+
+  .buttons{
   height: 25px;
   width: 25px;
-  cursor: pointer;
-
-margin-left: auto;
-margin-right: 250px;
+  
+  margin-left: 250px;
+  margin-right: auto;
+  display:flex;
+  
+  padding:10px;
  }
 
- #removeprofilepic{
-  height: 25px;
-  width: 25px;
-  cursor: pointer;
+  .b1{
+    cursor: pointer;
+    margin-right: 50px;
+    margin-top: 10px;
+  
+  }
 
-margin-left: auto;
-margin-right: auto;
- }
+  .b2{
+    cursor:pointer;
+    margin-top: 10px;
+  }
 
-#saveprofilepic,#removeprofilepic{
-  margin-top: 15px;
- display:inline-block;
-padding:3px;
-}
+
 
  #buttonupload{
 
@@ -231,7 +234,7 @@ padding:3px;
         
         margin: 13px 35%;
         margin-bottom: 2px;
-        text-align: center;
+        
         font-weight: 400;
         font-size: 16px;
         text-align: center;

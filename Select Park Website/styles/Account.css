@@ -148,19 +148,17 @@ body{
   margin-left: 250px;
   margin-right: auto;
   display:flex;
-  
+
   padding:10px;
  }
 
   .b1{
-    cursor: pointer;
     margin-right: 50px;
     margin-top: 10px;
   
   }
 
   .b2{
-    cursor:pointer;
     margin-top: 10px;
   }
 
@@ -244,3 +242,9 @@ body{
         background-color: lightblue;
         cursor: pointer;
     }
+
+#carform>button{
+  display:block;
+  margin-top: 10px;
+
+}

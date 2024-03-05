@@ -239,8 +239,6 @@ body{
         cursor: pointer;
     }
 
-#carform>button{
-  display:block;
-  margin-top: 10px;
-
+.carinfo{
+display: block;
 }

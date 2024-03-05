@@ -44,56 +44,6 @@ document.getElementById("saveprofilepic").addEventListener("click", function(){
 
 
 
-const carForm=document.getElementById('carform');
-const carList=document.getElementById('car-list');
-
-
-function addCarToList(licensePlate,carModel){
-    const carItem=document.createElement('div');
-    carItem.classList.add('caritem');
-    carItem.innerHTML=`
-    <span class="licenseplate">${licensePlate}</span>
-    <span class="carmodel">${carModel}</span>
-    <button class="editbtn">Edit</button>
-    <button class="removebtn">Remove</button>
-    
-    `;
-    carList.appendChild(carItem);
-
-    const Edit=carItem.querySelector('.editbtn');
-    const Remove=carItem.querySelector('.removebtn');
-
-    Edit.addEventListener('click',function(){
-document.getElementById('licenseplate').value=licensePlate;
-document.getElementById('carmodel').value=carModel;
-carForm.dataset.editId=Array.from(carList.children).indexOf(carItem);
-document.querySelector('.editbtn').textContent='Save Changes';
-    });
-
-    Remove.addEventListener('click',function(){
-        carList.removeChild(carItem);
-    });
-}
-
-carForm.addEventListener('submit',function(event){
-    event.preventDefault();
-    const licensePlate=document.getElementById('licenseplate').value;
-    const carModel=document.getElementById('carmodel').value;
-    const editId=carForm.dataset.editId;
-    
-    if(editId !==undefined){
-        const carItem=carList.children[editId];
-    carItem.querySelector('.licenseplate').textContent=licensePlate;
-    carItem.querySelector('.carmodel').textContent=carModel;
-    document.querySelector('button[type="submit"]').textContent='Add Car';
-    delete carForm.dataset.editId;
-    }
-    else{
-        addCarToList(licensePlate,carModel);
-    }
-    carForm.reset();
-    });
-
 
 
 

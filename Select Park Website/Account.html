@@ -2,11 +2,14 @@
 <html>
 <head>
 <title>Account</title>
-<link rel="stylesheet" href="profilestyle.css">
+<link rel="stylesheet" href="styles/Account.css">
+<link rel="icon" type="image/x-icon" href="Images/favicon.ico.png">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
-    <img src="Images/avatar.jpg" alt="select park logo">
+    <img src="Images/logo.PNG" alt="select park logo">
     <ul>
        <li><a href="Account.html">Account</a></li>
        <li class="dropdown">
@@ -28,33 +31,51 @@
 <main>
 <section class="container">
 
-    <h4>Profile</h4>
-    <div>
-        <img src="vsimages/css.png" alt="Avatar">
-        <input type="hidden" type="file" type="image">
+    <h4>Account</h4>
+    <div class="user-img">
+        <img src="" id="photo" alt="Avatar"/>
+        <input type="file" id="file">
+        <label for="file" id="buttonupload"><i class="fa fa-camera"></i></label>
     </div>
 
+    <div class="buttons">
+        <div class="b1">
+        <button type="submit" id="saveprofilepic">Save</button>
+        </div>
+
+        <div class="b2">
+        <button type="submit" id="removeprofilepic">Remove</i></button>
+        </div>
+
+    </div>
+
+
+
+
 <div class="input">
-<input type="email" placeholder="Email" required/>
+<input type="email"  placeholder="Email" required/>
 </div>
 
 
 
 <div class="input">
-<input type="text" placeholder="Phone Number" required/>
+<input type="text"  placeholder="Phone Number" required/>
 </div>
 
 
 
-<div class="input">
-<input type="text" placeholder="License Plate" required/>
+<h4>Car Details</h4>
+
+<div id="car-list">
+
 </div>
+<form id="carform">
+<input type="text" id="licenseplate" placeholder="License Plate"/>
+<input type="text" id="carmodel" placeholder="Car Model"/>
 
+<button type="submit">Add Car</button>
+</form>
 
-
-<div class="input">
-<input type="text" placeholder="Model" required/>
-</div>
 
 
 <div class="input">
@@ -70,11 +91,15 @@
 </div>
 <br/>
 <br/>
+
 </section>
 </main>
+
 <footer>
 Created by Group 4
 </footer>
 
+
+<script src="Account.js"></script>
 </body>
 </html>

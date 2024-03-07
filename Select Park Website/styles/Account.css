@@ -4,12 +4,12 @@ body{
 }
 
 
-ul {
+#ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgb(27, 58, 97);
+    background-color:rgb(27, 58, 97);
   }
   
   li {
@@ -243,9 +243,4 @@ body{
   display:block;
   margin-top: 10px;
 
-}
-
-.DCCTable{
-  border-collapse: collapse;
-  border-style: solid;
 }

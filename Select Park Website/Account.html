@@ -10,10 +10,10 @@
 <body>
 <header>
     <img src="Images/logo.PNG" alt="select park logo">
-    <ul>
+    <ul id="ul">
        <li><a href="Account.html">Account</a></li>
        <li class="dropdown">
-           <a href="javascript:void(0)" class="dropbtn">Reservation</a>
+           <a href="booking.html" class="dropbtn">Reservation</a>
            <div class="dropdown-content">
              <a href="#">Current Reservation</a>
              <a href="#">Future Reservation</a>
@@ -51,7 +51,7 @@
 
 
 
-
+<form id="" action="" method="get">
 <div class="input">
 <input type="email"  placeholder="Email" required/>
 </div>
@@ -61,20 +61,22 @@
 <div class="input">
 <input type="text"  placeholder="Phone Number" required/>
 </div>
-
+</form>
 
 
 <h4>Car Details</h4>
+<form id="carForm">
+    <label for="licensePlate">License Plate:</label>
+    <input type="text" id="licensePlate" required><br>
+    <label for="carModel">Car Model:</label>
+    <input type="text" id="carModel" required><br>
+    <button type="submit">Add Car</button>
+  </form>
 
-<div id="car-list">
-
-</div>
-<form id="carform">
-<input type="text" id="licenseplate" placeholder="License Plate"/>
-<input type="text" id="carmodel" placeholder="Car Model"/>
-
-<button type="submit">Add Car</button>
-</form>
+  <div id="carList">
+    <h2>Your Cars:</h2>
+    <ul id="list"></ul>
+  </div>
 
 
 <div id="Card-List"> 

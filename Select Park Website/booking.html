@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="styles/bookingstyle.css">
 </head>
 <body>
+
+  <script src="booking.js"></script>
     <header>
 
         <img src="Images/logo.PNG" alt="select park logo">
@@ -17,7 +19,7 @@
              <ul>
                 <li><a href="Account.html">Account</a></li>
                 <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn">Reservation</a>
+                    <a href="booking.html" class="dropbtn">Reservation</a>
                     <div class="dropdown-content">
                       <a href="#">Current Reservation</a>
                       <a href="#">Future Reservation</a>
@@ -36,6 +38,7 @@
 
 
 
+            <form>
             <div class="container">
 
             <img src="Images/location.png" alt="Location icon"/><p><b>University of North Texas at Dallas</b></p>
@@ -60,12 +63,12 @@
 
             <div class="start-button">
             <label for="start-input">Start: </label>
-            <input class="start" type="time">
+            <input id="start-input" type="time">
             </div>
 
             <div class="end-button">
             <label for="end-input">End: </label>
-            <input class="end" type="time">
+            <input id="end-input" type="time">
             </div>
 
             </div>
@@ -74,15 +77,15 @@
                 
           
                 
-                <div><input type="reset" class="cncl" value="Cancel"></div>
+                <div><input type="reset" for class="cncl" value="Cancel"></div>
                 
                 <div>
-                  <a href="parkinglot.html"><input type="button" class="cnfm" value="Confirm"></a>
+                  <input type="submit" class="cnfm" value="Confirm"></a>
                   
                 </div>
 
             </div>
-           
+            </form>
 
           </main>
           

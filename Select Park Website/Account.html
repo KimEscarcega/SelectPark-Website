@@ -77,14 +77,23 @@
 </form>
 
 
+<div id="Card-List"> 
 
+</div>
+
+<form id="CardForm">
 <div class="input">
-<input type="password" type="text" placeholder="Debit/Credit Card" required/>
+<input type="input" id="DCC" type="text" placeholder="Debit/Credit Card" required/>
 </div>
 
 <div class="input">
-<input type="password" type="text" placeholder="MM/YY" required/> <input type="password" type="text" placeholder="CVV" required/>
+<input type="input" id="DCCDate" type="text" placeholder="MM/YY" required/> <input type="input" id="CVV" type="text" placeholder="CVV" required/>
 </div>
+
+<div>
+    <button type="submit">Add Debit/Credit Card</button>
+</div>
+</form>
 
 <div>
     <button type="submit" class="button">Save</button>

@@ -3,6 +3,7 @@ const img=document.querySelector('#photo');
 const file=document.querySelector('#file');
 const buttonupload=document.querySelector('#buttonupload');
 
+
 window.onload=function(){
     const storedProfilePicURL=localStorage.getItem("profilePicURL");
     if(storedProfilePicURL){
@@ -38,12 +39,7 @@ document.getElementById("saveprofilepic").addEventListener("click", function(){
     alert("Profile picture saved" );
 });
 
-
-
-
-
-
-
+/* Add car */
 const carForm=document.getElementById('carform');
 const carList=document.getElementById('car-list');
 
@@ -94,10 +90,58 @@ carForm.addEventListener('submit',function(event){
     carForm.reset();
     });
 
+/* Add debit/credit card */
 
+const CardForm=document.getElementById('CardForm');
+const CardList=document.getElementById('Card-List');
 
+function addCardToList(DebitCreditCard, MMYY, CVV){
+    const cardItem=document.createElement('div');
+    cardItem.classList.add('carditem');
+    cardItem.innerHTML=`
 
+        <span "class="DCC">${DebitCreditCard}</span>
+        <span class="DCCDate">${MMYY}</span>
+        <span class="CVV">${CVV}</span>
+     
+    `;
 
+    CardList.appendChild(cardItem);
 
+    const Edit=cardItem.querySelector('.editbtn');
+    const Remove=cardItem.querySelector('.removebtn');
 
+    Edit.addEventListener('click',function(){
+document.getElementById('DCC').value=DebitCreditCard;
+document.getElementById('DCCDate').value=MMYY;
+document.getElementById('CVV').value=CVV;
+CardForm.dataset.editId=Array.from(CardList.children).indexOf(CardItem);
+document.querySelector('.editbtn').textContent='Save Changes';
+    });
+
+    Remove.addEventListener('click',function(){
+        CardList.removeChild(cardItem);
+    });
+}
+
+CardForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    const DebitCreditCard=document.getElementById('DCC').value;
+    const MMYY=document.getElementById('DCCDate').value;
+    const CVV=document.getElementById('CVV').value;
+    const editId=CardForm.dataset.editId;
+    
+    if(editId !==undefined){
+        const CardItem=CardList.children[editId];
+    CardItem.querySelector('.DCC').textContent=DebitCreditCard;
+    CardItem.querySelector('.DCCDate').textContent=MMYY;
+    CardItem.querySelector('.CVV').textContent=CVV;
+    document.querySelector('button[type="submit"]').textContent='Add Card';
+    delete CardForm.dataset.editId;
+    }
+    else{
+        addCardToList(DebitCreditCard, MMYY, CVV);
+    }
+    CardForm.reset();
+    });
 

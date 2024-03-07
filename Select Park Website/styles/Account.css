@@ -244,3 +244,8 @@ body{
   margin-top: 10px;
 
 }
+
+.DCCTable{
+  border-collapse: collapse;
+  border-style: solid;
+}

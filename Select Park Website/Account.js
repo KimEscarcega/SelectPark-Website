@@ -40,73 +40,7 @@ document.getElementById("saveprofilepic").addEventListener("click", function(){
 });
 
 /* Add car */
-const carForm=document.getElementById('carform');
-const carList=document.getElementById('car-list');
 
-
-function addCarToList(licensePlate,carModel){
-    const carItem=document.createElement('div');
-    carItem.classList.add('caritem');
-    carItem.innerHTML=`
-    <span class="licenseplate">${licensePlate}</span>
-    <span class="carmodel">${carModel}</span>
-    <button class="editbtn">Edit</button>
-    <button class="removebtn">Remove</button>
-    
-    `;
-    carList.appendChild(carItem);
-
-    const Edit=carItem.querySelector('.editbtn');
-    const Remove=carItem.querySelector('.removebtn');
-
-    Edit.addEventListener('click',function(){
-document.getElementById('licenseplate').value=licensePlate;
-document.getElementById('carmodel').value=carModel;
-carForm.dataset.editId=Array.from(carList.children).indexOf(carItem);
-document.querySelector('.editbtn').textContent='Save Changes';
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    const carForm = document.getElementById('carForm');
-    const carList = document.getElementById('list');
-  
-    carForm.addEventListener('submit', function (event) {
-      event.preventDefault();
-      const licensePlate = document.getElementById('licensePlate').value;
-      const carModel = document.getElementById('carModel').value;
-      addCar(licensePlate, carModel);
-      carForm.reset();
-    });
-  
-    function addCar(licensePlate, carModel) {
-      const listItem = document.createElement('li');
-      listItem.innerHTML = `
-        License Plate: ${licensePlate}, Car Model: ${carModel}
-        <button class="edit">Edit</button>
-        <button class="remove">Remove</button>
-      `;
-      carList.appendChild(listItem);
-  
-      listItem.querySelector('.edit').addEventListener('click', function () {
-        const newLicensePlate = prompt('Enter new license plate:', licensePlate);
-        const newCarModel = prompt('Enter new car model:', carModel);
-        if (newLicensePlate && newCarModel) {
-          listItem.innerHTML = `
-            License Plate: ${newLicensePlate}, Car Model: ${newCarModel}
-            <button class="edit">Edit</button>
-            <button class="remove">Remove</button>
-          `;
-        }
-      });
-  
-      listItem.querySelector('.remove').addEventListener('click', function () {
-        listItem.remove();
-      });
-    }
-  });
 
 
 
@@ -167,5 +101,6 @@ CardForm.addEventListener('submit',function(event){
         addCardToList(DebitCreditCard, MMYY, CVV);
     }
     CardForm.reset();
-    });
+
+ });
 

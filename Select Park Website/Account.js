@@ -139,6 +139,4 @@ CardForm.addEventListener('submit',function(event){
         addCardToList(DebitCreditCard, MMYY, CVV);
     }
     CardForm.reset();
-
- });
-
+    });

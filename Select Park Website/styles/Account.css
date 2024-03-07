@@ -244,3 +244,29 @@ body{
   margin-top: 10px;
 
 }
+    #carform {
+      margin-bottom: 20px;
+    }
+
+    #carList {
+      margin-top: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+
+    #carForm button{
+      margin-top:10px;
+    }
+
+    .container #carList #list{
+      list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:lightblue;
+    }
+
+
+    

@@ -43,6 +43,50 @@ document.getElementById("saveprofilepic").addEventListener("click", function(){
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const carForm = document.getElementById('carForm');
+    const carList = document.getElementById('list');
+  
+    carForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const licensePlate = document.getElementById('licensePlate').value;
+      const carModel = document.getElementById('carModel').value;
+      addCar(licensePlate, carModel);
+      carForm.reset();
+    });
+  
+    function addCar(licensePlate, carModel) {
+      const listItem = document.createElement('li');
+      listItem.innerHTML = `
+        License Plate: ${licensePlate}, Car Model: ${carModel}
+        <button class="edit">Edit</button>
+        <button class="remove">Remove</button>
+      `;
+      carList.appendChild(listItem);
+  
+      listItem.querySelector('.edit').addEventListener('click', function () {
+        const newLicensePlate = prompt('Enter new license plate:', licensePlate);
+        const newCarModel = prompt('Enter new car model:', carModel);
+        if (newLicensePlate && newCarModel) {
+          listItem.innerHTML = `
+            License Plate: ${newLicensePlate}, Car Model: ${newCarModel}
+            <button class="edit">Edit</button>
+            <button class="remove">Remove</button>
+          `;
+        }
+      });
+  
+      listItem.querySelector('.remove').addEventListener('click', function () {
+        listItem.remove();
+      });
+    }
+  });
+
+
+
+
+
+
 
 
 

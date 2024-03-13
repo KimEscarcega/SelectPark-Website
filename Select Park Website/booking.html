@@ -10,7 +10,6 @@
 </head>
 <body>
 
-  <script src="booking.js"></script>
     <header>
 
         <img src="Images/logo.PNG" alt="select park logo">
@@ -38,7 +37,7 @@
 
 
 
-            <form>
+    
             <div class="container">
 
             <img src="Images/location.png" alt="Location icon"/><p><b>University of North Texas at Dallas</b></p>
@@ -46,11 +45,13 @@
             </div>
 
 
+
+
+            <form id="bookingInfo" action="parkinglot.html" method="GET">
+
             <div class="date">
-
-            <label for="date-input">Date: </label>
-            <input type="date">
-
+            <label for="date-input">Date:</label>
+            <input id="date" name="date" type="date" required min="">
             </div>
 
 
@@ -62,13 +63,13 @@
             <div class="input-time">
 
             <div class="start-button">
-            <label for="start-input">Start: </label>
-            <input id="start-input" type="time">
+            <label for="startTime">Start: </label>
+            <input id="startTime" name="startTime" type="time" required min="">
             </div>
 
             <div class="end-button">
-            <label for="end-input">End: </label>
-            <input id="end-input" type="time">
+            <label for="end">End: </label>
+            <input id="endTime" name="endTime" type="time" required min="">
             </div>
 
             </div>
@@ -79,12 +80,13 @@
                 
                 <div><input type="reset" for class="cncl" value="Cancel"></div>
                 
+               
                 <div>
-                  <input type="submit" class="cnfm" value="Confirm"></a>
-                  
+                  <input type="submit" class="cnfm">
                 </div>
-
+                
             </div>
+
             </form>
 
           </main>
@@ -94,6 +96,9 @@
             <p>Created by Group 4 </p> 
 
     </footer>
+
+    <script src="booking.js"></script>
+
     
 </body>
 </html>

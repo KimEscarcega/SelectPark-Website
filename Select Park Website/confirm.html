@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm Booking</title>
+  
+  
     <link rel="stylesheet" href="styles/bookingstyle.css">
 
     <link rel="icon" type="image/x-icon" href="Images/favicon.ico.png">
+
 </head>
 <body>
     <header>
@@ -42,33 +45,36 @@
 
             </div>
 
-            <div class="confirm-tags">
 
+              <div class="confirm-tags">
 
-              <p>Date:</p>
-              <p>Time:</p>
-              <p>Total Price</p>
-
-
-            </div>
-
-            <div class="buttons">
-                
-              <div><input type="button" class="cncl" value="Cancel"></div>
-              <div>
-                <a href="confirmation.html"><input type="button" class="cnfm2" value="Confirm"></a>
-                
+                <p>Date: <span id="date"></span></p>
+                <p>Start: <span id="startTime"></span></p>
+                <p>End: <span id="endTime"></span></p>
+                <p>Total Price:</p>
               </div>
-            </div>
 
-           
+              <div class="buttons"> 
+                <button onclick="cancelRes()" class="cncl">Cancel</button>
+                <button onclick="confirmRes()" class="cnfm">Confirm</button>  
+              </div>
 
+            
+
+        
           </main>
     <footer>
         
             <p>Created by Group 4 </p> 
 
     </footer>
+
     
+    <script src="booking.js">
+  
+
+    </script>
+   
+
 </body>
 </html>

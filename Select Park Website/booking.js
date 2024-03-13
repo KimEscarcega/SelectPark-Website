@@ -1,4 +1,58 @@
-bookingInfo(){
-    let startTime = document.getElementById('start-input').value;
-    alert('your start time is'+startTime)
-}
+  function selected(spot) {
+  const date = new URLSearchParams(window.location.search).get('date');
+  const startTime = new URLSearchParams(window.location.search).get('startTime');
+  const endTime = new URLSearchParams(window.location.search).get('endTime');
+
+
+    window.location.href = `confirm.html?date=${date}&startTime=${startTime}&endTime=${endTime}&spot=${spot}`;}
+
+
+/* for confirm.html */
+
+function formatTime(times) {
+  const time = new Date(`1970-01-01T${times}`);
+  const hour = time.getHours();
+  const minute = time.getMinutes();
+  const amPM = hour >= 12 ? 'PM' : 'AM';
+  const formattedHour = hour % 12 || 12;
+  const formattedMinute = minute < 10 ? `0${minute}` : minute;
+  return `${formattedHour}:${formattedMinute} ${amPM}`;}
+
+
+
+  function formatDate(dateSelected){
+    const date = new Date(dateSelected);
+    const option = { month:'long', day:'numeric', year: 'numeric'};
+    return date.toLocaleDateString('en-US', option);
+
+  }
+
+
+
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('date').innerText = formatDate(params.get('date'));
+    document.getElementById('startTime').innerText = formatTime(params.get('startTime'));
+    document.getElementById('endTime').innerText = formatTime(params.get('endTime'));
+  
+    const spot = params.get('spot');
+    document.getElementById('spot').innerText = spot;
+  
+    function cancelRes(){
+    window.location.href ='booking.html';
+  }
+  
+   function confirmRes() {
+     window.location.href = `confirmation.html?date=${params.get('date')}&startTime=${params.get('startTime')}&endTime=${params.get('endTime')}&spot=${spot}`;
+   }
+
+
+
+   
+
+
+/* for confirmation */
+
+         document.getElementById('date').innerText = formatDate(params.get('date'));
+        document.getElementById('startTime').innerText = formatTime(params.get('startTime'));
+        document.getElementById('endTime').innerText = formatTime(params.get('endTime'));
+        document.getElementById('spot').innerText = params.get('spot');

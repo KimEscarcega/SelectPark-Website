@@ -34,7 +34,7 @@ main{
     background-color: rgb(83, 126, 175);
     margin-top: 6px;
     color: black;
-    width: 40%;
+    width: 350px;
     border-bottom: 50vh;
     
 
@@ -60,9 +60,6 @@ main{
  
 
 }
-
-
-
 
 
 #container input{

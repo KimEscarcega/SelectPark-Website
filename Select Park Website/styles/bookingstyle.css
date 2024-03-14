@@ -101,21 +101,21 @@ body{
 
         width: 100px;
         height: auto;
-        padding-bottom: 5%;
-        padding-top: 5%;
+        padding-bottom: 5px;
+        padding-top: 5px;
         
     }
 
-    
-
-    
 
 
     main{
         background-color: white;
-        margin-left: 250px;
-        margin-right: 250px;
         margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 20%;
+        margin-right: 20%;
+        padding-top: 30px;
+        padding-bottom: 30px;
 
 
     }
@@ -124,37 +124,31 @@ body{
         width: 20px;
         height: auto;
         padding-top: 20px;
-
-        margin-right: 0px;
-        margin-left: 250px;
-
+        padding-left: 85%;
         display: block;
+
+        
 
     }
 
     .container p {
         color: black;
         padding-top: 20px;
+        text-align: center;
         
     }
-
 
     .container {
         display: grid;
         align-items: center; 
         grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 5px;
+        
        }
        
        
     .date,.input-time{
+      text-align: center;
 
-      margin-left: 275px;
-     
-    
-  
-
-    
     }
 
     .time{
@@ -172,6 +166,7 @@ body{
 
       padding-top: 40px;
       padding-bottom: 20px;
+      align-content: center;
       
   }
 
@@ -182,13 +177,14 @@ body{
       border: solid black 0px;
       border-radius: 20px;
       padding: 5px 20px;
-
-  
+      
      
   }
 
   .cncl{
       background-color: rgb(211, 67, 67);
+      margin: 20px;
+      margin-left: -10%;
   }
 
   .cncl:hover{
@@ -197,6 +193,8 @@ body{
 
   .cnfm, .cnfm2{
       background-color: rgb(143, 228, 157);
+      margin: 20px;
+      margin-left: 20%;
   }
 
   .cnfm:hover, .cnfm2:hover{

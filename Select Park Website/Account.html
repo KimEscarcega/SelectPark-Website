@@ -56,46 +56,50 @@
 <input type="email"  placeholder="Email" required/>
 </div>
 
-
-
 <div class="input">
 <input type="text"  placeholder="Phone Number" required/>
 </div>
 </form>
 
-
 <h4>Car Details</h4>
 <form id="carForm">
-    <label for="licensePlate">License Plate:</label>
-    <input type="text" id="licensePlate" required><br>
-    <label for="carModel">Car Model:</label>
-    <input type="text" id="carModel" required><br>
+  <div class="input">
+    <input type="text" id="licensePlate" placeholder="License Plate" required> <br>
+    <input type="text" id="carMake" placeholder="Car Make" required> <br>
+    <input type="text" id="carModel" placeholder="Car Model" required> <br>
+    <input type="text" id="carColor" placeholder="Car Color" required> <br>
+    
     <button type="submit">Add Car</button>
+</div>  
   </form>
 
   <div id="carList">
-    <h2>Your Cars:</h2>
+    
     <ul id="list"></ul>
   </div>
 
 
-<div id="Card-List"> 
 
-</div>
-
+<h4>Payment Details</h4>
 <form id="CardForm">
-<div class="input">
-<input type="input" id="DCC" type="text" placeholder="Debit/Credit Card" required/>
-</div>
 
 <div class="input">
-<input type="input" id="DCCDate" type="text" placeholder="MM/YY" required/> <input type="input" id="CVV" type="text" placeholder="CVV" required/>
+
+<input type="input" id="DCC" type="text" placeholder="Debit/Credit Card" required/> <br>
+<input type="input" id="DCCDate" type="number" placeholder="MM/YY" required/> <br>
+<input type="input" id="CVV" type="number" placeholder="CVV" required/> <br>
+<input type="input" id="Zip" type="number" placeholder="Zip Code" required/> <br>
+
+<button type="submit">Add Debit/Credit Card</button> 
+
 </div>
 
-<div>
-    <button type="submit">Add Debit/Credit Card</button>
-</div>
 </form>
+<div id="CardList">
+  
+  <ul id="CardListt"></ul>
+</div>
+
 
 <div>
     <button type="submit" class="button">Save</button>

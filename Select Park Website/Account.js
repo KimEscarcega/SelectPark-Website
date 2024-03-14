@@ -39,6 +39,9 @@ document.getElementById("saveprofilepic").addEventListener("click", function(){
     alert("Profile picture saved" );
 });
 
+
+
+
 /* Add car */
 document.addEventListener('DOMContentLoaded', function () {
     const carForm = document.getElementById('carForm');
@@ -47,15 +50,19 @@ document.addEventListener('DOMContentLoaded', function () {
     carForm.addEventListener('submit', function (event) {
       event.preventDefault();
       const licensePlate = document.getElementById('licensePlate').value;
+      const carMake = document.getElementById('carMake').value;
       const carModel = document.getElementById('carModel').value;
-      addCar(licensePlate, carModel);
+      const carColor = document.getElementById('carColor').value;
+      
+      addCar(licensePlate, carMake, carModel, carColor);
       carForm.reset();
     });
   
-    function addCar(licensePlate, carModel) {
+    function addCar(licensePlate, carMake, carModel, carColor) {
       const listItem = document.createElement('li');
       listItem.innerHTML = `
-        License Plate: ${licensePlate}, Car Model: ${carModel}
+        <h4>Your Cars:</h4>
+        <b>License Plate:</b> ${licensePlate}, <b>Car Make: </b>${carMake}, <b>Car Model: </b>${carModel}, <b>Car Color: </b>${carColor}
         <button class="edit">Edit</button>
         <button class="remove">Remove</button>
       `;
@@ -63,10 +70,12 @@ document.addEventListener('DOMContentLoaded', function () {
   
       listItem.querySelector('.edit').addEventListener('click', function () {
         const newLicensePlate = prompt('Enter new license plate:', licensePlate);
+        const newCarMake = prompt('Enter a new make:', carMake);
         const newCarModel = prompt('Enter new car model:', carModel);
+        const newCarColor = prompt('Enter a new color:', carColor);
         if (newLicensePlate && newCarModel) {
           listItem.innerHTML = `
-            License Plate: ${newLicensePlate}, Car Model: ${newCarModel}
+            License Plate: ${newLicensePlate}, Car Make: ${newCarMake}, Car Model: ${newCarModel}, Car Color: ${newCarColor}
             <button class="edit">Edit</button>
             <button class="remove">Remove</button>
           `;
@@ -87,56 +96,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 /* Add debit/credit card */
+document.addEventListener('DOMContentLoaded', function () {
+  const cardForm = document.getElementById('CardForm');
+  const CardList = document.getElementById('CardListt');
 
-const CardForm=document.getElementById('CardForm');
-const CardList=document.getElementById('Card-List');
-
-function addCardToList(DebitCreditCard, MMYY, CVV){
-    const cardItem=document.createElement('div');
-    cardItem.classList.add('carditem');
-    cardItem.innerHTML=`
-
-        <span "class="DCC">${DebitCreditCard}</span>
-        <span class="DCCDate">${MMYY}</span>
-        <span class="CVV">${CVV}</span>
-     
-    `;
-
-    CardList.appendChild(cardItem);
-
-    const Edit=cardItem.querySelector('.editbtn');
-    const Remove=cardItem.querySelector('.removebtn');
-
-    Edit.addEventListener('click',function(){
-document.getElementById('DCC').value=DebitCreditCard;
-document.getElementById('DCCDate').value=MMYY;
-document.getElementById('CVV').value=CVV;
-CardForm.dataset.editId=Array.from(CardList.children).indexOf(CardItem);
-document.querySelector('.editbtn').textContent='Save Changes';
-    });
-
-    Remove.addEventListener('click',function(){
-        CardList.removeChild(cardItem);
-    });
-}
-
-CardForm.addEventListener('submit',function(event){
+  cardForm.addEventListener('submit', function (event) {
     event.preventDefault();
-    const DebitCreditCard=document.getElementById('DCC').value;
-    const MMYY=document.getElementById('DCCDate').value;
-    const CVV=document.getElementById('CVV').value;
-    const editId=CardForm.dataset.editId;
-    
-    if(editId !==undefined){
-        const CardItem=CardList.children[editId];
-    CardItem.querySelector('.DCC').textContent=DebitCreditCard;
-    CardItem.querySelector('.DCCDate').textContent=MMYY;
-    CardItem.querySelector('.CVV').textContent=CVV;
-    document.querySelector('button[type="submit"]').textContent='Add Card';
-    delete CardForm.dataset.editId;
-    }
-    else{
-        addCardToList(DebitCreditCard, MMYY, CVV);
-    }
-    CardForm.reset();
+    const DebitCreditCard = document.getElementById('DCC').value;
+    const MMYY = document.getElementById('DCCDate').value;
+    const CVV = document.getElementById('CVV').value;
+    const ZipCode = document.getElementById('Zip').value;
+    addCard(DebitCreditCard, MMYY, CVV, ZipCode);
+    cardForm.reset();
+  });
+
+  function addCard(DebitCreditCard, MMYY, CVV, ZipCode) {
+    const listItem = document.createElement('li');
+    listItem.innerHTML = `
+      <h4>Your Cards:</h4>
+      <b>Debit/Credit Card #: </b>${DebitCreditCard}, <b>Date: </b>${MMYY}, <b>CVV: </b> ${CVV}, <b>Zip Code: </b>${ZipCode}
+      <button class="edit">Edit</button>
+      <button class="remove">Remove</button>
+    `;
+    CardList.appendChild(listItem);
+
+    listItem.querySelector('.edit').addEventListener('click', function () {
+      const newDCC = prompt('Enter new Debit/Credit Card Number:', DebitCreditCard);
+      const newMMYY = prompt('Enter new expiration date:', MMYY);
+      const newCVV = prompt('Enter a new CVV number:', CVV);
+      const newZipCode = prompt('Enter a new zip code:', ZipCode);
+      if (newDCC && newMMYY && newCVV && newZipCode) {
+        listItem.innerHTML = `
+          <b>Debit/Credit Card: </b>${newDCC}, <b>Date: </b>${newMMYY}, <b>CVV: </b>${newCVV}, <b>Zip Code: </b>${newZipCode}
+          <button class="edit">Edit</button>
+          <button class="remove">Remove</button>
+        `;
+      }
     });
+
+    listItem.querySelector('.remove').addEventListener('click', function () {
+      listItem.remove();
+    });
+  }
+});
+

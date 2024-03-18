@@ -7,7 +7,36 @@
     window.location.href = `confirm.html?date=${date}&startTime=${startTime}&endTime=${endTime}&spot=${spot}`;}
 
 
+    
 /* for confirm.html */
+
+function calculateParkingPrice(start, end) {
+  const startMinutes = parseInt(start.split(':')[0]) * 60 + parseInt(start.split(':')[1]);
+  const endMinutes = parseInt(end.split(':')[0]) * 60 + parseInt(end.split(':')[1]);
+  const duration = endMinutes - startMinutes;
+  
+  // adjust price per minutes here (ex. every minute = 5 cents)
+  const pricePerMinute = 0.05;
+  
+  const totalPrice = duration * pricePerMinute;
+  return totalPrice.toFixed(2); 
+}
+
+function finalPrice() {
+  const params = new URLSearchParams(window.location.search);
+  const startTime = params.get('startTime');
+  const endTime = params.get('endTime');
+
+  const price = calculateParkingPrice(startTime, endTime);
+  const priceSpan = document.getElementById('price');
+
+  if (priceSpan) {
+      priceSpan.innerText = `$${price}`;
+  }
+}
+
+window.onload = finalPrice;
+
 
 function formatTime(times) {
   const time = new Date(`1970-01-01T${times}`);
@@ -18,6 +47,7 @@ function formatTime(times) {
   const formattedMinute = minute < 10 ? `0${minute}` : minute;
   return `${formattedHour}:${formattedMinute} ${amPM}`;}
 
+  
 
 
   function formatDate(dateSelected){
@@ -55,4 +85,4 @@ function formatTime(times) {
          document.getElementById('date').innerText = formatDate(params.get('date'));
         document.getElementById('startTime').innerText = formatTime(params.get('startTime'));
         document.getElementById('endTime').innerText = formatTime(params.get('endTime'));
-        document.getElementById('spot').innerText = params.get('spot');
+        document.getElementById('spot').innerText = params.get('spot');       

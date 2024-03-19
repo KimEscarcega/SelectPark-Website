@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', function () {
     function addCar(licensePlate, carMake, carModel, carColor) {
       const listItem = document.createElement('li');
       listItem.innerHTML = 
-      "License Plate: <span class='plate'>" + licensePlate + "</span>" + ", Car Make: <span class='make'>" + carMake +  "</span>, Car Model: <span class='model'>" + carModel + "</span>" +
-      ", Car Color: <span class='color'>" + carColor + "</span>" +  " <button class='edit'>Edit</button>" +
+      "<b>License Plate:</b> <span class='plate'>" + licensePlate + "</span>" + ", <b>Car Make:</b> <span class='make'>" + carMake +  "</span>, <b>Car Model:</b> <span class='model'>" + carModel + "</span>" +
+      ", <b>Car Color:</b> <span class='color'>" + carColor + "</span>" +  " <button class='edit'>Edit</button>" +
       " <button class='remove'>Remove</button>";
       carList.appendChild(listItem);
   

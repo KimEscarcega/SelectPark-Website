@@ -72,8 +72,7 @@ header{
 
 footer{
   background-color: rgb(39, 89, 150);
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding: 40px;
   color: #f1f1f1;
 }
     
@@ -294,6 +293,3 @@ body{
         overflow: hidden;
         background-color:lightblue;
         }
-
-
-    

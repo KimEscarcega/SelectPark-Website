@@ -90,12 +90,11 @@ h1, h2, p{
     margin-right: 32%;
 }
 
-/* Styling the textbox that the user is going to 
-input a review about the application */
+/* Styling the textbox */
 #reviewtext{
     text-align: left;
     font-size: medium;
-    border: 3px solid #000000;
+    border: 1px solid #000000;
     width: 50%;
     height: 200px;
     padding: 1%;
@@ -103,44 +102,45 @@ input a review about the application */
 
 }
 
+
 /* Styling Later and Submit buttons */
 #laterbtn{
-    font-size: 150%; 
-    font-weight: "bold";
-    color: #ffffff;
-    background-color: #ff0000;
-    border: none;
-    border-radius: 20px;
-    width: 20%;
-    margin: 2%;
-    margin-left: 29%;
-    text-align: center;
+    text-decoration: none;
+      color: rgb(255, 255, 255);
+
+      border: solid black 0px;
+      border-radius: 20px;
+      padding: 5px 20px;
+      background-color: rgb(211, 67, 67);
+      margin: 20px;
+      margin-left: 42%;
+
 }
 
 #laterbtn:hover{
-    background-color: rgb(233, 173, 173);
+    background-color: rgba(211, 67, 67, 0.5);
     cursor: pointer;
 }
 
 #submitbtn{
-    font-size: 150%;
-    font-weight: "bold";
-    color: #ffffff;
-    background-color: rgb(45, 142, 98);
-    border: none;
-    border-radius: 20px;
-    width: 20%;
-    margin: 2%;
-    margin-left: 4%;
-    text-align: center;
+    text-decoration: none;
+      color: rgb(255, 255, 255);
+
+      border: solid black 0px;
+      border-radius: 20px;
+      padding: 5px 20px;
+      background-color: rgb(143, 228, 157);
+      margin: 20px;
+      margin-left: 8%;
+      
 }
 
 #submitbtn:hover{
-    background-color: rgb(151, 222, 193);
+    background-color: rgb(143, 228, 157, 0.5);
     cursor: pointer;
 }
 footer{
     background-color: rgb(39, 89, 150);
-    padding: 50px;
+    padding: 40px;
     color: #FFFFFF;
 }

@@ -60,26 +60,24 @@ document.addEventListener('DOMContentLoaded', function () {
   
     function addCar(licensePlate, carMake, carModel, carColor) {
       const listItem = document.createElement('li');
-      listItem.innerHTML = `
-        <h4>Your Cars:</h4>
-        <b>License Plate:</b> ${licensePlate}, <b>Car Make: </b>${carMake}, <b>Car Model: </b>${carModel}, <b>Car Color: </b>${carColor}
-        <button class="edit">Edit</button>
-        <button class="remove">Remove</button>
-      `;
+      listItem.innerHTML = 
+      "License Plate: <span class='plate'>" + licensePlate + "</span>" + ", Car Make: <span class='make'>" + carMake +  "</span>, Car Model: <span class='model'>" + carModel + "</span>" +
+      ", Car Color: <span class='color'>" + carColor + "</span>" +  " <button class='edit'>Edit</button>" +
+      " <button class='remove'>Remove</button>";
       carList.appendChild(listItem);
   
       listItem.querySelector('.edit').addEventListener('click', function () {
         const newLicensePlate = prompt('Enter new license plate:', licensePlate);
-        const newCarMake = prompt('Enter a new make:', carMake);
+        const newCarMake=prompt('Enter new car make:',carMake);
         const newCarModel = prompt('Enter new car model:', carModel);
-        const newCarColor = prompt('Enter a new color:', carColor);
-        if (newLicensePlate && newCarModel) {
-          listItem.innerHTML = `
-            License Plate: ${newLicensePlate}, Car Make: ${newCarMake}, Car Model: ${newCarModel}, Car Color: ${newCarColor}
-            <button class="edit">Edit</button>
-            <button class="remove">Remove</button>
-          `;
-        }
+        const newCarColor=prompt('Enter new car color:', carColor);
+        
+
+        listItem.querySelector('.plate').textContent=newLicensePlate;
+        listItem.querySelector('.make').textContent=newCarMake;
+        listItem.querySelector('.model').textContent=newCarModel;
+        listItem.querySelector('.color').textContent=newCarColor;
+
       });
   
       listItem.querySelector('.remove').addEventListener('click', function () {

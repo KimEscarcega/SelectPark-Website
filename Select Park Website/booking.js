@@ -50,17 +50,12 @@ function formatTime(times) {
   
 
 
-  function formatDate(dateSelected){
-    const date = new Date(dateSelected);
-    const option = { month:'long', day:'numeric', year: 'numeric'};
-    return date.toLocaleDateString('en-US', option);
-
-  }
+  
 
 
 
     const params = new URLSearchParams(window.location.search);
-    document.getElementById('date').innerText = formatDate(params.get('date'));
+    document.getElementById('date').innerText = (params.get('date'));
     document.getElementById('startTime').innerText = formatTime(params.get('startTime'));
     document.getElementById('endTime').innerText = formatTime(params.get('endTime'));
   
